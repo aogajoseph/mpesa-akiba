@@ -40,6 +40,9 @@ import breakpoints from "assets/theme/base/breakpoints";
 // Akiba React context
 import { useMaterialUIController } from "context";
 
+//Akiba Logo
+import Logo from "assets/images/logo.png";
+
 function DefaultNavbar({ transparent, light, action }) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
@@ -108,23 +111,33 @@ function DefaultNavbar({ transparent, light, action }) {
           py={transparent ? 1.5 : 0.75}
           lineHeight={1}
           pl={{ xs: 0, lg: 1 }}
+          sx={{ display: "flex", alignItems: "center" }}
         >
-          <MDTypography variant="button" fontWeight="bold" color={light ? "white" : "dark"}>
+          <MDTypography variant="button">
+            <img src={Logo} width={30} alt="Logo" />
+          </MDTypography>
+          <MDTypography
+            variant="button"
+            fontWeight="bold"
+            fontSize="1.15rem"
+            px={1}
+            color={light ? "white" : "dark"}
+          >
             Akiba
           </MDTypography>
         </MDBox>
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
-          <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" light={light} />
-          <DefaultNavbarLink icon="person" name="profile" route="/profile" light={light} />
+          <DefaultNavbarLink icon="lightbulb" name="About" route="/dashboard" light={light} />
+          <DefaultNavbarLink icon="announcement" name="FAQs" route="/profile" light={light} />
           <DefaultNavbarLink
-            icon="account_circle"
-            name="sign up"
+            icon="chatbubbleoutline"
+            name="Blog"
             route="/authentication/sign-up"
             light={light}
           />
           <DefaultNavbarLink
-            icon="key"
-            name="sign in"
+            icon="phone"
+            name="Contact"
             route="/authentication/sign-in"
             light={light}
           />

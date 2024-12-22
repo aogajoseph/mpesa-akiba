@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Akiba React - v2.2.0
+* Material Dashboard 2 React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -19,11 +19,11 @@ import PropTypes from "prop-types";
 // @mui material components
 import Grid from "@mui/material/Grid";
 
-// Akiba React components
+// Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 // import MDTypography from "components/MDTypography";
 
-// Akiba React example components
+// Material Dashboard 2 React example components
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import PageLayout from "examples/LayoutContainers/PageLayout";
 
@@ -37,7 +37,7 @@ function CoverLayout({ coverHeight, image, children }) {
         action={{
           type: "external",
           route: "https://creative-tim.com/product/material-dashboard-react",
-          label: "free download",
+          label: "sign in",
         }}
         transparent
         light
