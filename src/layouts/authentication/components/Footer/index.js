@@ -1,6 +1,6 @@
 /**
 =========================================================
-* Material Dashboard 2 React - v2.2.0
+* Akiba React - v2.2.0
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/material-dashboard-react
@@ -21,18 +21,18 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
-// Material Dashboard 2 React components
+// Akiba React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Material Dashboard 2 React base styles
+// Akiba React base styles
 import typography from "assets/theme/base/typography";
 
 function Footer({ light }) {
   const { size } = typography;
 
   return (
-    <MDBox position="absolute" width="100%" bottom={0} py={4}>
+    <MDBox position="relative" width="100%" bottom={0} top={40} py={1}>
       <Container>
         <MDBox
           width="100%"
@@ -48,21 +48,16 @@ function Footer({ light }) {
             alignItems="center"
             flexWrap="wrap"
             color={light ? "white" : "text"}
-            fontSize={size.sm}
+            fontSize={size.xs}
           >
-            &copy; {new Date().getFullYear()}, made with
-            <MDBox fontSize={size.md} color={light ? "white" : "dark"} mb={-0.5} mx={0.25}>
-              <Icon color="inherit" fontSize="inherit">
-                favorite
-              </Icon>
-            </MDBox>
-            by
+            &copy; {new Date().getFullYear()}
+            <MDBox fontSize={size.xs} color={light ? "white" : "dark"} mb={-0.5} mx={0.25}></MDBox>
             <Link href="https://www.creative-tim.com/" target="_blank">
               <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
-                &nbsp;Creative Tim&nbsp;
+                &nbsp;Globe Technologies &nbsp;
               </MDTypography>
             </Link>
-            for a better web.
+            All rights reserved.
           </MDBox>
           <MDBox
             component="ul"
@@ -81,47 +76,50 @@ function Footer({ light }) {
               },
             })}
           >
-            <MDBox component="li" pr={2} lineHeight={1}>
+            <MDBox component="li" pr={1} lineHeight={1}>
               <Link href="https://www.creative-tim.com/" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
+                  fontSize="small"
                   color={light ? "white" : "dark"}
                 >
-                  Creative Tim
+                  Terms & Conditions
                 </MDTypography>
               </Link>
             </MDBox>
-            <MDBox component="li" px={2} lineHeight={1}>
+            <MDBox component="li" px={1} lineHeight={1}>
               <Link href="https://www.creative-tim.com/presentation" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
+                  fontSize="small"
                   color={light ? "white" : "dark"}
                 >
-                  About Us
+                  Cookie Declaration
                 </MDTypography>
               </Link>
             </MDBox>
-            <MDBox component="li" px={2} lineHeight={1}>
+            <MDBox component="li" px={1} lineHeight={1}>
               <Link href="https://www.creative-tim.com/blog" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
+                  fontSize="small"
                   color={light ? "white" : "dark"}
                 >
-                  Blog
+                  Privacy Policy
                 </MDTypography>
               </Link>
             </MDBox>
-            <MDBox component="li" pl={2} lineHeight={1}>
+            <MDBox component="li" pl={1} lineHeight={1}>
               <Link href="https://www.creative-tim.com/license" target="_blank">
                 <MDTypography
                   variant="button"
                   fontWeight="regular"
                   color={light ? "white" : "dark"}
                 >
-                  License
+                  Security
                 </MDTypography>
               </Link>
             </MDBox>
