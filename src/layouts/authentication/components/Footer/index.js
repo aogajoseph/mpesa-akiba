@@ -84,7 +84,7 @@ function Footer({ light }) {
                   fontSize="small"
                   color={light ? "white" : "dark"}
                 >
-                  Terms & Conditions
+                  Terms
                 </MDTypography>
               </Link>
             </MDBox>
@@ -96,7 +96,7 @@ function Footer({ light }) {
                   fontSize="small"
                   color={light ? "white" : "dark"}
                 >
-                  Cookie Declaration
+                  Cookies
                 </MDTypography>
               </Link>
             </MDBox>
@@ -108,7 +108,7 @@ function Footer({ light }) {
                   fontSize="small"
                   color={light ? "white" : "dark"}
                 >
-                  Privacy Policy
+                  Privacy
                 </MDTypography>
               </Link>
             </MDBox>
