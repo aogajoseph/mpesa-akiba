@@ -36,7 +36,7 @@ function BasicLayout({ image, children }) {
         action={{
           type: "external",
           route: "https://creative-tim.com/product/material-dashboard-react",
-          label: "free download",
+          label: "create account",
           color: "dark",
         }}
       />
@@ -57,13 +57,19 @@ function BasicLayout({ image, children }) {
         }}
       />
       <MDBox px={1} width="100%" height="100vh" mx="auto">
-        <Grid container spacing={1} justifyContent="center" alignItems="center" height="100%">
+        <Grid
+          container
+          spacing={1}
+          justifyContent="center"
+          alignItems="flex-start"
+          height="100%"
+          sx={{ paddingTop: "8rem" }}
+        >
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
             {children}
           </Grid>
         </Grid>
       </MDBox>
-      <Footer light />
     </PageLayout>
   );
 }
