@@ -28,6 +28,7 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // Authentication pages components
 import Footer from "layouts/authentication/components/Footer";
+import { Margin } from "@mui/icons-material";
 
 function BasicLayout({ image, children }) {
   return (
@@ -43,7 +44,8 @@ function BasicLayout({ image, children }) {
       <MDBox
         position="absolute"
         width="100%"
-        minHeight="112vh"
+        height="100%"
+        minHeight="120vh"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             image &&
