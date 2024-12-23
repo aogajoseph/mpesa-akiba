@@ -43,7 +43,7 @@ function BasicLayout({ image, children }) {
       <MDBox
         position="absolute"
         width="100%"
-        minHeight="100vh"
+        minHeight="112vh"
         sx={{
           backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
             image &&
@@ -63,13 +63,14 @@ function BasicLayout({ image, children }) {
           justifyContent="center"
           alignItems="flex-start"
           height="100%"
-          sx={{ paddingTop: "8rem" }}
+          sx={{ paddingTop: "9rem" }}
         >
           <Grid item xs={11} sm={9} md={5} lg={4} xl={3}>
             {children}
           </Grid>
         </Grid>
       </MDBox>
+      <Footer light />
     </PageLayout>
   );
 }
