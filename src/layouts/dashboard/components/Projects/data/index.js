@@ -71,15 +71,16 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "companies", accessor: "companies", width: "45%", align: "left" },
-      { Header: "members", accessor: "members", width: "10%", align: "left" },
-      { Header: "budget", accessor: "budget", align: "center" },
+      { Header: "saving goal", accessor: "companies", width: "45%", align: "left" },
+      { Header: "target", accessor: "budget", align: "center" },
+      { Header: "remaining", accessor: "balance", width: "10%", align: "center" },
       { Header: "completion", accessor: "completion", align: "center" },
+      // { Header: "participants", accessor: "members", width: "10%", align: "center" },
     ],
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        companies: <Company image={logoXD} name="House Rent" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -92,7 +93,12 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            Kes. 150,000
+          </MDTypography>
+        ),
+        balance: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            Kes. 60,000
           </MDTypography>
         ),
         completion: (
@@ -102,7 +108,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoAtlassian} name="Add Progress Track" />,
+        companies: <Company image={logoAtlassian} name="Vacation" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -113,17 +119,22 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $3,000
+            Kes. 300,000
+          </MDTypography>
+        ),
+        balance: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            Kes. 240,000
           </MDTypography>
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={10} color="info" variant="gradient" label={false} />
+            <MDProgress value={10} color="error" variant="gradient" label={false} />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoSlack} name="Fix Platform Errors" />,
+        companies: <Company image={logoSlack} name="Investment" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -134,7 +145,12 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            Not set
+            Kes. 1,000,000
+          </MDTypography>
+        ),
+        balance: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            Kes. 0
           </MDTypography>
         ),
         completion: (
@@ -144,7 +160,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoSpotify} name="Launch our Mobile App" />,
+        companies: <Company image={logoSpotify} name="Kid's Education" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -157,7 +173,12 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $20,500
+            Kes. 500,000
+          </MDTypography>
+        ),
+        balance: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            Kes. 0
           </MDTypography>
         ),
         completion: (
@@ -167,7 +188,7 @@ export default function data() {
         ),
       },
       {
-        companies: <Company image={logoJira} name="Add the New Pricing Page" />,
+        companies: <Company image={logoJira} name="Charity" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([[team4, "Jessica Doe"]])}
@@ -175,17 +196,22 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $500
+            Kes. 50,000
+          </MDTypography>
+        ),
+        balance: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            Kes. 35,000
           </MDTypography>
         ),
         completion: (
           <MDBox width="8rem" textAlign="left">
-            <MDProgress value={25} color="info" variant="gradient" label={false} />
+            <MDProgress value={25} color="warning" variant="gradient" label={false} />
           </MDBox>
         ),
       },
       {
-        companies: <Company image={logoInvesion} name="Redesign New Online Shop" />,
+        companies: <Company image={logoInvesion} name="Emergencies" />,
         members: (
           <MDBox display="flex" py={1}>
             {avatars([
@@ -196,7 +222,12 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $2,000
+            Kes. 50,000
+          </MDTypography>
+        ),
+        balance: (
+          <MDTypography variant="caption" color="text" fontWeight="medium">
+            Kes. 30,000
           </MDTypography>
         ),
         completion: (

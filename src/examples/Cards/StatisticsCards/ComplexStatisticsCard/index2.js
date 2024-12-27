@@ -25,10 +25,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-// Direction Icon
-import DirectionIcon from "@mui/material/Icon";
-
-function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
+function ComplexStatisticsCard2({ color, title, count, extras, icon }) {
   return (
     <Card>
       <MDBox display="flex" justifyContent="space-between" pt={1} px={2}>
@@ -57,22 +54,15 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
         </MDBox>
       </MDBox>
       <Divider />
-      <MDBox pb={2} px={2}>
-        {percentage && (
+      <MDBox pb={2} px={2} textAlign="center">
+        {extras && (
           <MDTypography component="p" variant="button" color="text" display="flex">
-            <MDTypography
-              component="span"
-              variant="button"
-              fontWeight="bold"
-              color={percentage.color}
-              display="flex"
-              alignItems="center"
-            >
-              {percentage.amount}
-              &nbsp;
-              <DirectionIcon fontSize="small">{percentage.direction}</DirectionIcon>
+            <MDTypography variant="p" sx={{ marginRight: 1 }}>
+              Since
             </MDTypography>
-            &nbsp;{percentage.label}
+            <MDTypography variant="p" color="dark" fontWeight="bold">
+              {extras.date}
+            </MDTypography>
           </MDTypography>
         )}
       </MDBox>
@@ -81,9 +71,9 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
 }
 
 // Setting default values for the props of ComplexStatisticsCard
-ComplexStatisticsCard.defaultProps = {
+ComplexStatisticsCard2.defaultProps = {
   color: "info",
-  percentage: {
+  extras: {
     color: "success",
     amount: 0,
     direction: "",
@@ -93,7 +83,7 @@ ComplexStatisticsCard.defaultProps = {
 };
 
 // Typechecking props for the ComplexStatisticsCard
-ComplexStatisticsCard.propTypes = {
+ComplexStatisticsCard2.propTypes = {
   color: PropTypes.oneOf([
     "primary",
     "secondary",
@@ -106,7 +96,7 @@ ComplexStatisticsCard.propTypes = {
   ]),
   title: PropTypes.string.isRequired,
   count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  percentage: PropTypes.shape({
+  extras: PropTypes.shape({
     color: PropTypes.oneOf([
       "primary",
       "secondary",
@@ -119,9 +109,9 @@ ComplexStatisticsCard.propTypes = {
     ]),
     amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     label: PropTypes.string,
-    direction: PropTypes.string,
+    date: PropTypes.string,
   }),
   icon: PropTypes.node.isRequired,
 };
 
-export default ComplexStatisticsCard;
+export default ComplexStatisticsCard2;

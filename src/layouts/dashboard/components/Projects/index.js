@@ -31,6 +31,11 @@ import DataTable from "examples/Tables/DataTable";
 // Data
 import data from "layouts/dashboard/components/Projects/data";
 
+// Saving goals icons
+import CheckIcon from '@mui/icons-material/Check';
+import HourglassEmptyIcon from '@mui/icons-material/HourglassEmpty';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+
 function Projects() {
   const { columns, rows } = data();
   const [menu, setMenu] = useState(null);
@@ -53,9 +58,18 @@ function Projects() {
       open={Boolean(menu)}
       onClose={closeMenu}
     >
-      <MenuItem onClick={closeMenu}>Action</MenuItem>
-      <MenuItem onClick={closeMenu}>Another action</MenuItem>
-      <MenuItem onClick={closeMenu}>Something else</MenuItem>
+      <MenuItem onClick={closeMenu}>
+        <CheckIcon style={{ marginRight: "8px" }} />
+          Achieved
+      </MenuItem>
+      <MenuItem onClick={closeMenu}>
+        <HourglassEmptyIcon style={{ marginRight: "8px" }} />
+         Pending
+      </MenuItem>
+      <MenuItem onClick={closeMenu}>
+        <AddCircleIcon style={{ marginRight: "8px" }} />
+          Create Goal
+      </MenuItem>
     </Menu>
   );
 
@@ -64,7 +78,7 @@ function Projects() {
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
           <MDTypography variant="h6" gutterBottom>
-            Projects
+            Saving Goals
           </MDTypography>
           <MDBox display="flex" alignItems="center" lineHeight={0}>
             <Icon
@@ -77,7 +91,7 @@ function Projects() {
               done
             </Icon>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              &nbsp;<strong>30 done</strong> this month
+              &nbsp;<strong>5 Achieved</strong> since Dec 23, 2024.
             </MDTypography>
           </MDBox>
         </MDBox>

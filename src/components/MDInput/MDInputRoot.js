@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Akiba React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 // @mui material components
 import TextField from "@mui/material/TextField";
 import { styled } from "@mui/material/styles";
@@ -63,9 +48,28 @@ export default styled(TextField)(({ theme, ownerState }) => {
   });
 
   return {
-    backgroundColor: disabled ? `${grey[200]} !important` : transparent.main,
+    backgroundColor: disabled ? `${grey[100]} !important` : transparent.main,
     pointerEvents: disabled ? "none" : "auto",
     ...(error && errorStyles()),
     ...(success && successStyles()),
+
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: "none",
+    },
+
+    // Add a bottom border
+    "& .MuiInputBase-root": {
+      borderBottom: `1px solid ${palette.grey[500]}`,
+      fontStyle: "normal",
+    },
+
+    // Add a bottom border on focus
+    "& .Mui-focused .MuiInputBase-root": {
+      borderBottom: `2px solid ${palette.grey[900]}`,
+    },
+
+    "& .MuiInputBase-input::placeholder": {
+      fontStyle: "italic",
+    },
   };
 });

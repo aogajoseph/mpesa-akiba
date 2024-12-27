@@ -26,6 +26,7 @@ import Footer from "examples/Footer";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
+import ComplexStatisticsCard2 from "examples/Cards/StatisticsCards/ComplexStatisticsCard/index2";
 
 // Data
 import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
@@ -47,13 +48,14 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="dark"
-                icon="weekend"
-                title="Bookings"
-                count={281}
+                icon="account_balance_wallet"
+                title="Total Savings"
+                count={0}
                 percentage={{
                   color: "success",
-                  amount: "+55%",
-                  label: "than lask week",
+                  amount: "1%",
+                  direction: "arrow_upward",
+                  label: "This Month",
                 }}
               />
             </MDBox>
@@ -61,43 +63,41 @@ function Dashboard() {
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
-                icon="leaderboard"
-                title="Today's Users"
-                count="2,300"
+                color="info"
+                icon="insights"
+                title="Savings Target"
+                count={0}
                 percentage={{
-                  color: "success",
-                  amount: "+3%",
-                  label: "than last month",
+                  color: "error",
+                  amount: "5%",
+                  direction: "arrow_downward",
+                  label: "Below Target",
                 }}
               />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard
+              <ComplexStatisticsCard2
                 color="success"
-                icon="store"
-                title="Revenue"
-                count="34k"
-                percentage={{
-                  color: "success",
-                  amount: "+1%",
-                  label: "than yesterday",
+                icon="download"
+                title=" Total Deposits"
+                count={0}
+                extras={{
+                  date: "Dec 23, 2024",
                 }}
               />
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
             <MDBox mb={1.5}>
-              <ComplexStatisticsCard
+              <ComplexStatisticsCard2
                 color="primary"
-                icon="person_add"
-                title="Followers"
-                count="+91"
-                percentage={{
-                  color: "success",
-                  amount: "",
-                  label: "Just updated",
+                icon="upload"
+                title="Total Withdrawals"
+                count={0}
+                extras={{
+                  date: "Dec 23, 2024",
                 }}
               />
             </MDBox>
@@ -109,9 +109,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsBarChart
                   color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
+                  title="account health"
+                  description="Based on overall financial activity"
+                  date="updates every day"
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -119,26 +119,26 @@ function Dashboard() {
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsLineChart
-                  color="success"
-                  title="daily sales"
-                  description={
-                    <>
-                      (<strong>+15%</strong>) increase in today sales.
-                    </>
-                  }
-                  date="updated 4 min ago"
-                  chart={sales}
+                  color="dark"
+                  title="contributions"
+                  description="Direct member deposits"
+                  date="updates every week"
+                  chart={tasks}
                 />
               </MDBox>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsLineChart
-                  color="dark"
-                  title="completed tasks"
-                  description="Last Campaign Performance"
-                  date="just updated"
-                  chart={tasks}
+                  color="success"
+                  title="Target Tracking"
+                  description={
+                    <>
+                      Target = Total Saving Goals
+                    </>
+                  }
+                  date="updates every month"
+                  chart={sales}
                 />
               </MDBox>
             </Grid>

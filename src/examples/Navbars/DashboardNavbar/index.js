@@ -27,6 +27,9 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
+import SearchIcon from "@mui/icons-material/Search";
+import CloseIcon from "@mui/icons-material/Close";
+import Tooltip from "@mui/material/Tooltip";
 
 // Akiba React components
 import MDBox from "components/MDBox";
@@ -60,6 +63,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const [openMenu, setOpenMenu] = useState(false);
   const route = useLocation().pathname.split("/").slice(1);
 
+  const [searchValue, setSearchValue] = useState(""); // Track the search input value
+
   useEffect(() => {
     // Setting the navbar type
     if (fixedNavbar) {
@@ -90,6 +95,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
   const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
   const handleOpenMenu = (event) => setOpenMenu(event.currentTarget);
   const handleCloseMenu = () => setOpenMenu(false);
+
+  const handleClearSearch = () => setSearchValue(""); // Clear the search input
 
   // Render the notifications menu
   const renderMenu = () => (
@@ -130,56 +137,146 @@ function DashboardNavbar({ absolute, light, isMini }) {
       sx={(theme) => navbar(theme, { transparentNavbar, absolute, light, darkMode })}
     >
       <Toolbar sx={(theme) => navbarContainer(theme)}>
-        <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-          <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
-        </MDBox>
-        {isMini ? null : (
-          <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <MDBox pr={1}>
-              <MDInput label="Search here" />
+        <MDBox display="flex" flexDirection="column" width="100%">
+          <MDBox
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            width="100%"
+            mb={1}
+          >
+            <MDBox>
+              <h1
+                style={{
+                  margin: 0,
+                  fontSize: "1.5rem",
+                  fontWeight: "bold",
+                  color: darkMode ? "#fff" : "#000",
+                }}
+              >
+                Our Family
+              </h1>
             </MDBox>
-            <MDBox color={light ? "white" : "inherit"}>
+
+            <MDBox>
+              <MDInput
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
+                label=""
+                placeholder="Search..."
+                InputProps={{
+                  endAdornment: searchValue ? (
+                    <CloseIcon
+                      onClick={handleClearSearch}
+                      style={{
+                        fontSize: "18px",
+                        color: "#898989",
+                        cursor: "pointer",
+                      }}
+                    />
+                  ) : (
+                    <SearchIcon
+                      style={{
+                        fontSize: "18px",
+                        color: "#898989",
+                        transform: "scaleX(-1)",
+                      }}
+                    />
+                  ),
+                  style: {
+                    fontStyle: "normal",
+                    color: darkMode ? "#fff" : "#000",
+                    fontWeight: "normal",
+                    borderRadius: "0px",
+                    width: "100px",
+                    paddingRight: "1px",
+                  },
+                  inputProps: {
+                    style: {
+                      paddingLeft: ".1px",
+                      paddingBottom: "1px",
+                      paddingTop: "6px",
+                    },
+                  },
+                }}
+              />
+            </MDBox>
+          </MDBox>
+
+          <MDBox display="flex" justifyContent="space-between" alignItems="center" width="100%">
+            <MDBox>
+              <Breadcrumbs
+                icon="home"
+                title={route[route.length - 1]}
+                route={route}
+                light={light}
+              />
+            </MDBox>
+
+            <MDBox display="flex" alignItems="center">
               <Link to="/authentication/sign-in/basic">
-                <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={iconsStyle}>account_circle</Icon>
-                </IconButton>
+                <Tooltip title="Deposit Cash" arrow>
+                  <IconButton sx={navbarIconButton} size="small" disableRipple>
+                    <Icon sx={iconsStyle}>download</Icon>
+                  </IconButton>
+                </Tooltip>
               </Link>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarMobileMenu}
-                onClick={handleMiniSidenav}
-              >
-                <Icon sx={iconsStyle} fontSize="medium">
-                  {miniSidenav ? "menu_open" : "menu"}
-                </Icon>
-              </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarIconButton}
-                onClick={handleConfiguratorOpen}
-              >
-                <Icon sx={iconsStyle}>settings</Icon>
-              </IconButton>
-              <IconButton
-                size="small"
-                disableRipple
-                color="inherit"
-                sx={navbarIconButton}
-                aria-controls="notification-menu"
-                aria-haspopup="true"
-                variant="contained"
-                onClick={handleOpenMenu}
-              >
-                <Icon sx={iconsStyle}>notifications</Icon>
-              </IconButton>
+              <Tooltip title="Withdraw Cash" arrow>
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  onClick={handleConfiguratorOpen}
+                >
+                  <Icon sx={iconsStyle}>upload</Icon>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Current Members" arrow>
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  aria-controls="notification-menu"
+                  aria-haspopup="true"
+                  variant="contained"
+                  onClick={handleOpenMenu}
+                >
+                  <Icon sx={iconsStyle}>people</Icon>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Notifications" arrow>
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarIconButton}
+                  aria-controls="notification-menu"
+                  aria-haspopup="true"
+                  variant="contained"
+                  onClick={handleOpenMenu}
+                >
+                  <Icon sx={iconsStyle}>notifications</Icon>
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="More" arrow>
+                <IconButton
+                  size="small"
+                  disableRipple
+                  color="inherit"
+                  sx={navbarMobileMenu}
+                  onClick={handleMiniSidenav}
+                >
+                  <Icon sx={iconsStyle} fontSize="medium">
+                    {miniSidenav ? "menu" : "menu_open"}
+                  </Icon>
+                </IconButton>
+              </Tooltip>
               {renderMenu()}
             </MDBox>
           </MDBox>
-        )}
+        </MDBox>
       </Toolbar>
     </AppBar>
   );
