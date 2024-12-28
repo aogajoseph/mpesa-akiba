@@ -154,7 +154,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                   color: darkMode ? "#fff" : "#000",
                 }}
               >
-                Our Family
+                Family
               </h1>
             </MDBox>
 

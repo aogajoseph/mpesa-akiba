@@ -14,66 +14,66 @@ Coded by www.creative-tim.com
 */
 
 // Images
-import kal from "assets/images/kal-visuals-square.jpg";
-import marie from "assets/images/marie.jpg";
-import ivana from "assets/images/ivana-square.jpg";
-import team3 from "assets/images/team-3.jpg";
-import team4 from "assets/images/team-4.jpg";
+import friends from "assets/images/friends.png";
+import workplace from "assets/images/workplace.png";
+import church from "assets/images/church.png";
+import homeChama from "assets/images/home chama.png";
+import businessChama from "assets/images/business.jpeg";
 
 export default [
   {
-    image: kal,
-    name: "Sophie B.",
-    description: "Hi! I need more information..",
+    image: friends,
+    name: "Friends",
+    description: "",
     action: {
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Select",
     },
   },
   {
-    image: marie,
-    name: "Anne Marie",
-    description: "Awesome work, can you..",
+    image: workplace,
+    name: "Workplace",
+    description: "",
     action: {
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Select",
     },
   },
   {
-    image: ivana,
-    name: "Ivanna",
-    description: "About files I can..",
+    image: church,
+    name: "Church",
+    description: "",
     action: {
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Select",
     },
   },
   {
-    image: team4,
-    name: "Peterson",
-    description: "Have a great afternoon..",
+    image: homeChama,
+    name: "Home Chama",
+    description: "",
     action: {
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Select",
     },
   },
   {
-    image: team3,
-    name: "Nick Daniel",
-    description: "Hi! I need more information..",
+    image: businessChama,
+    name: "Biashara Chama",
+    description: "",
     action: {
       type: "internal",
       route: "/pages/profile/profile-overview",
       color: "info",
-      label: "reply",
+      label: "Select",
     },
   },
 ];

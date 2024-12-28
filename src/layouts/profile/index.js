@@ -59,19 +59,16 @@ function Overview() {
       <Header>
         <MDBox mt={5} mb={3}>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={6} xl={4}>
-              <PlatformSettings />
-            </Grid>
-            <Grid item xs={12} md={6} xl={4} sx={{ display: "flex" }}>
+          <Grid item xs={12} md={6} xl={4} sx={{ display: "flex" }}>
               <Divider orientation="vertical" sx={{ ml: -2, mr: 1 }} />
               <ProfileInfoCard
-                title="profile information"
-                description="Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+                title="bio"
+                description="Hi, I’m Joseph Onyango, founder and CEO of Globe Technologies, the tech company behind the Akiba platform, and a range of other innovative digital solutions. Driven by a vision to connect people through the power of technology, Globe Technologies is at the forefront of creating impactful digital products that shape the future."
                 info={{
-                  fullName: "Alec M. Thompson",
-                  mobile: "(44) 123 1234 123",
-                  email: "alecthompson@mail.com",
-                  location: "USA",
+                  fullName: "Joseph Onyango",
+                  phone: "(254) 725 406 004",
+                  email: "ceo@globe.net",
+                  role: "Chief Admin",
                 }}
                 social={[
                   {
@@ -90,13 +87,16 @@ function Overview() {
                     color: "instagram",
                   },
                 ]}
-                action={{ route: "", tooltip: "Edit Profile" }}
+                action={{ route: "", tooltip: "Edit Bio" }}
                 shadow={false}
               />
               <Divider orientation="vertical" sx={{ mx: 0 }} />
             </Grid>
+            <Grid item xs={12} md={6} xl={4}>
+              <PlatformSettings />
+            </Grid>
             <Grid item xs={12} xl={4}>
-              <ProfilesList title="conversations" profiles={profilesListData} shadow={false} />
+              <ProfilesList title="Connected Accounts" profiles={profilesListData} shadow={false} />
             </Grid>
           </Grid>
         </MDBox>

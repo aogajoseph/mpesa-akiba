@@ -24,86 +24,91 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 function PlatformSettings() {
-  const [followsMe, setFollowsMe] = useState(true);
-  const [answersPost, setAnswersPost] = useState(false);
-  const [mentionsMe, setMentionsMe] = useState(true);
-  const [newLaunches, setNewLaunches] = useState(false);
-  const [productUpdate, setProductUpdate] = useState(true);
-  const [newsletter, setNewsletter] = useState(false);
+  const [showProfile, setShowProfile] = useState(true);
+  const [displayTransactions, setDisplayTransactions] = useState(false);
+  const [activate2FA, setActivate2FA] = useState(true);
+  const [useBiometrics, setUseBiometrics] = useState(false);
+  const [receiveNotifications, setReceiveNotifications] = useState(true);
+  const [smsAndEmailAlerts, setSmsAndEmailAlerts] = useState(false);
 
   return (
     <Card sx={{ boxShadow: "none" }}>
       <MDBox p={2}>
         <MDTypography variant="h6" fontWeight="medium" textTransform="capitalize">
-          platform settings
+          manage preferences
         </MDTypography>
       </MDBox>
       <MDBox pt={1} pb={2} px={2} lineHeight={1.25}>
         <MDTypography variant="caption" fontWeight="bold" color="text" textTransform="uppercase">
-          account
+          privacy
         </MDTypography>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={followsMe} onChange={() => setFollowsMe(!followsMe)} />
+            <Switch checked={showProfile} onChange={() => setShowProfile(!showProfile)} />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Email me when someone follows me
+              Show My Profile
             </MDTypography>
           </MDBox>
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={answersPost} onChange={() => setAnswersPost(!answersPost)} />
+            <Switch checked={displayTransactions} onChange={() => setDisplayTransactions(!displayTransactions)} />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Email me when someone answers on my post
-            </MDTypography>
-          </MDBox>
-        </MDBox>
-        <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
-          <MDBox mt={0.5}>
-            <Switch checked={mentionsMe} onChange={() => setMentionsMe(!mentionsMe)} />
-          </MDBox>
-          <MDBox width="80%" ml={0.5}>
-            <MDTypography variant="button" fontWeight="regular" color="text">
-              Email me when someone mentions me
+              Display Transactions
             </MDTypography>
           </MDBox>
         </MDBox>
         <MDBox mt={3}>
           <MDTypography variant="caption" fontWeight="bold" color="text" textTransform="uppercase">
-            application
+            security
           </MDTypography>
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={newLaunches} onChange={() => setNewLaunches(!newLaunches)} />
+            <Switch checked={activate2FA} onChange={() => setActivate2FA(!activate2FA)} />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              New launches and projects
+              Activate 2-Step Verification
             </MDTypography>
           </MDBox>
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={productUpdate} onChange={() => setProductUpdate(!productUpdate)} />
+            <Switch checked={useBiometrics} onChange={() => setUseBiometrics(!useBiometrics)} />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Monthly product updates
+              Use Biometrics to Login
+            </MDTypography>
+          </MDBox>
+        </MDBox>
+        <MDBox mt={3}>
+          <MDTypography variant="caption" fontWeight="bold" color="text" textTransform="uppercase">
+            notifications
+          </MDTypography>
+        </MDBox>
+        <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
+          <MDBox mt={0.5}>
+            <Switch checked={receiveNotifications} onChange={() => setReceiveNotifications(!receiveNotifications)} />
+          </MDBox>
+          <MDBox width="80%" ml={0.5}>
+            <MDTypography variant="button" fontWeight="regular" color="text">
+              Receive Notifications
             </MDTypography>
           </MDBox>
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={newsletter} onChange={() => setNewsletter(!newsletter)} />
+            <Switch checked={smsAndEmailAlerts} onChange={() => setSmsAndEmailAlerts(!smsAndEmailAlerts)} />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              Subscribe to newsletter
+              Receive SMS & Email Alerts
             </MDTypography>
           </MDBox>
         </MDBox>
