@@ -42,7 +42,7 @@ import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
+import Chat from "layouts/chat";
 import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
@@ -67,11 +67,11 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Inbox",
-    key: "sign-in",
+    name: "Chat",
+    key: "chat",
     icon: <Icon fontSize="small">chat</Icon>,
-    route: "/authentication/sign-in",
-    component: <SignIn />,
+    route: "/chat",
+    component: <Chat />,
   },
   {
     type: "collapse",

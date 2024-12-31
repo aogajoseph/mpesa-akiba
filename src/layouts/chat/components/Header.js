@@ -1,31 +1,6 @@
-/**
-=========================================================
-* Akiba React - v2.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 import { useState, useEffect } from "react";
-
-// prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
-
-// @mui material components
-import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Icon from "@mui/material/Icon";
-import { Tooltip } from "@mui/material";
+import { Card, Grid, AppBar, Tabs, Tab, Icon, Tooltip, Badge } from "@mui/material";
 
 // Akiba React components
 import MDBox from "components/MDBox";
@@ -37,9 +12,8 @@ import breakpoints from "assets/theme/base/breakpoints";
 
 // Images
 import defaultProfileImg from "assets/images/profile.png";
-import backgroundImage from "assets/images/cover.jpg";
 
-function Header({ children }) {
+function Header({ contact, children }) {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   const [tabValue, setTabValue] = useState(0);
 
@@ -71,18 +45,8 @@ function Header({ children }) {
         display="flex"
         alignItems="center"
         position="relative"
-        minHeight="18.75rem"
+        minHeight="3.5rem"
         borderRadius="xl"
-        sx={{
-          backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.info.main, 0.6),
-              rgba(gradients.info.state, 0.6)
-            )}, url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "50%",
-          overflow: "hidden",
-        }}
       />
       <Card
         sx={{
@@ -95,47 +59,58 @@ function Header({ children }) {
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <MDAvatar src={defaultProfileImg} alt="profile-image" size="xl" shadow="sm" />
+            <Badge color={contact?.online ? "success" : "default"} variant="dot" overlap="circular">
+              <MDAvatar
+                src={contact?.avatar || defaultProfileImg}
+                alt={contact?.name}
+                size="xl"
+                shadow="sm"
+              />
+            </Badge>
           </Grid>
           <Grid item>
             <MDBox height="100%" mt={0.5} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Joseph Onyango
+                {contact?.name || "Angela Achieng'"}
               </MDTypography>
-              <MDTypography variant="button" color="text" fontWeight="regular">
-                First Admin
+              <MDTypography
+                variant="button"
+                color={contact?.online ? "success" : "text.secondary"}
+                fontWeight="regular"
+              >
+                {contact?.online ? "Online" : "Offline"}
               </MDTypography>
             </MDBox>
           </Grid>
           <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
             <AppBar position="static">
               <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
-                <Tooltip title="Edit Profile">
+                <Tooltip title="See Profile">
                   <Tab
-                    label="Edit"
+                    label="Profile"
                     icon={
                       <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                        edit_note
+                        visibility
                       </Icon>
                     }
                   />
                 </Tooltip>
-                <Tooltip title="Share Profile">
+                <Tooltip title="Block/Unblock">
                   <Tab
-                    label="Share"
+                    label="Block"
                     icon={
                       <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                        share
+                        block
                       </Icon>
                     }
                   />
                 </Tooltip>
-                <Tooltip title="Report an Issue">
+                <Tooltip title="Find Messages">
                   <Tab
-                    label="Report"
+                    label="Search"
                     icon={
                       <Icon fontSize="small" sx={{ mt: -0.25 }}>
-                        report
+                        search
                       </Icon>
                     }
                   />
@@ -152,11 +127,21 @@ function Header({ children }) {
 
 // Setting default props for the Header
 Header.defaultProps = {
+  contact: {
+    name: "Angela",
+    avatar: defaultProfileImg,
+    online: true,
+  },
   children: "",
 };
 
 // Typechecking props for the Header
 Header.propTypes = {
+  contact: PropTypes.shape({
+    name: PropTypes.string,
+    avatar: PropTypes.string,
+    online: PropTypes.bool,
+  }),
   children: PropTypes.node,
 };
 

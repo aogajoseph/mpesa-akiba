@@ -52,7 +52,12 @@ function TimelineItem({ color, icon, title, log, dateTime, description, lastItem
         <Icon fontSize="inherit">{icon}</Icon>
       </MDBox>
       <MDBox ml={5.75} pt={description ? 0.7 : 0.5} lineHeight={0} maxWidth="30rem">
-        <MDTypography variant="button" fontWeight="medium" color={isDark ? "white" : "dark"} sx={{ marginRight: 1 }}>
+        <MDTypography
+          variant="button"
+          fontWeight="medium"
+          color={isDark ? "white" : "dark"}
+          sx={{ marginRight: 1 }}
+        >
           {title}
         </MDTypography>
         <MDTypography variant="button" fontWeight="normal" color={isDark ? "white" : "dark"}>

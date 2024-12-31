@@ -120,8 +120,8 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="dark"
-                  title="contributions"
-                  description="Direct member deposits"
+                  title="deposit history"
+                  description="All deposits and contributions"
                   date="updates every week"
                   chart={tasks}
                 />
@@ -132,11 +132,7 @@ function Dashboard() {
                 <ReportsLineChart
                   color="success"
                   title="Target Tracking"
-                  description={
-                    <>
-                      Target = Total Saving Goals
-                    </>
-                  }
+                  description={<>Target = Total Saving Goals</>}
                   date="updates every month"
                   chart={sales}
                 />

@@ -54,7 +54,10 @@ function PlatformSettings() {
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={displayTransactions} onChange={() => setDisplayTransactions(!displayTransactions)} />
+            <Switch
+              checked={displayTransactions}
+              onChange={() => setDisplayTransactions(!displayTransactions)}
+            />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
@@ -94,7 +97,10 @@ function PlatformSettings() {
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={receiveNotifications} onChange={() => setReceiveNotifications(!receiveNotifications)} />
+            <Switch
+              checked={receiveNotifications}
+              onChange={() => setReceiveNotifications(!receiveNotifications)}
+            />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">
@@ -104,7 +110,10 @@ function PlatformSettings() {
         </MDBox>
         <MDBox display="flex" alignItems="center" mb={0.5} ml={-1.5}>
           <MDBox mt={0.5}>
-            <Switch checked={smsAndEmailAlerts} onChange={() => setSmsAndEmailAlerts(!smsAndEmailAlerts)} />
+            <Switch
+              checked={smsAndEmailAlerts}
+              onChange={() => setSmsAndEmailAlerts(!smsAndEmailAlerts)}
+            />
           </MDBox>
           <MDBox width="80%" ml={0.5}>
             <MDTypography variant="button" fontWeight="regular" color="text">

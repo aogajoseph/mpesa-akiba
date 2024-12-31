@@ -83,19 +83,18 @@ function OrdersOverview() {
           dateTime="18 DEC 4:54 AM"
           lastItem
         />
-        
         <MDBox display="flex" justifyContent="center" mt={1}>
-          <Link 
-            onClick={handleSeeMoreClick} 
+          <Link
+            onClick={handleSeeMoreClick}
             sx={{
-              cursor: "pointer", 
-              fontWeight: "bold", 
+              cursor: "pointer",
+              fontWeight: "bold",
               fontSize: "0.875rem",
               color: "primary.main",
               "&:hover": {
                 color: "secondary.main",
                 textDecoration: "underline",
-              }
+              },
             }}
           >
             {isExpanded ? "See Less" : "See More"}
