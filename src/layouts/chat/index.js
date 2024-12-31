@@ -47,7 +47,7 @@ function Overview() {
               marginBottom: 1,
             }}
           >
-            Private Messaging
+            One-on-One Messaging
           </MDBox>
           <Grid container spacing={1}>
             {isMobile ? (

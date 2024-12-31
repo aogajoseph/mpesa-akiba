@@ -43,7 +43,7 @@ import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import Chat from "layouts/chat";
-import SignUp from "layouts/authentication/sign-up";
+import Forum from "layouts/forum";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -76,10 +76,10 @@ const routes = [
   {
     type: "collapse",
     name: "Forum",
-    key: "sign-up",
+    key: "forum",
     icon: <Icon fontSize="small">forum</Icon>,
-    route: "/authentication/sign-up",
-    component: <SignUp />,
+    route: "/forum",
+    component: <Forum />,
   },
   {
     type: "collapse",

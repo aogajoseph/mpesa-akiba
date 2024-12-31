@@ -19,7 +19,7 @@ const MessageBubble = ({ content, sender, timestamp, isSender }) => {
           color={isSender ? "grey.200" : "grey.600"}
           mb={0.5}
         >
-          <span style={{ marginLeft: "0px" }}>{timestamp}</span>
+          {!isSender && `${sender}  `} <span style={{ marginLeft: "0px" }}>{timestamp}</span>
         </Typography>
         <Typography variant="body2">{content}</Typography>
       </Box>

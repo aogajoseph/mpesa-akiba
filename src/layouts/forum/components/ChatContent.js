@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Box } from "@mui/material";
-import MessageBubble from "./MessageBubble"; // Import the reusable component
+import MessageBubble from "./MessageBubble"; // Import the new component
 
 const ChatContent = ({ messages }) => {
   return (
@@ -27,7 +27,7 @@ const ChatContent = ({ messages }) => {
   );
 };
 
-// Prop types validation
+// PropTypes validation
 ChatContent.propTypes = {
   messages: PropTypes.arrayOf(
     PropTypes.shape({
