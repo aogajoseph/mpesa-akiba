@@ -40,7 +40,7 @@ import Dashboard from "layouts/dashboard";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
-import Notifications from "layouts/notifications";
+import Account from "layouts/account";
 import Profile from "layouts/profile";
 import Chat from "layouts/chat";
 import Forum from "layouts/forum";
@@ -84,10 +84,10 @@ const routes = [
   {
     type: "collapse",
     name: "Account Info",
-    key: "notifications",
+    key: "account",
     icon: <Icon fontSize="small">lock</Icon>,
-    route: "/notifications",
-    component: <Notifications />,
+    route: "/account",
+    component: <Account />,
   },
   {
     type: "collapse",

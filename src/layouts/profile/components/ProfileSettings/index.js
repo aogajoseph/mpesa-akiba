@@ -23,7 +23,7 @@ import Switch from "@mui/material/Switch";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-function PlatformSettings() {
+function ProfileSettings() {
   const [showProfile, setShowProfile] = useState(true);
   const [displayTransactions, setDisplayTransactions] = useState(false);
   const [activate2FA, setActivate2FA] = useState(true);
@@ -126,4 +126,4 @@ function PlatformSettings() {
   );
 }
 
-export default PlatformSettings;
+export default ProfileSettings;

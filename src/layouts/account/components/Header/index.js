@@ -35,10 +35,6 @@ import MDAvatar from "components/MDAvatar";
 // Akiba React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-// Images
-import defaultProfileImg from "assets/images/profile.png";
-import backgroundImage from "assets/images/cover.jpg";
-
 function Header({ children }) {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   const [tabValue, setTabValue] = useState(0);
@@ -71,18 +67,8 @@ function Header({ children }) {
         display="flex"
         alignItems="center"
         position="relative"
-        minHeight="18.75rem"
+        minHeight="3.5rem"
         borderRadius="xl"
-        sx={{
-          backgroundImage: ({ functions: { rgba, linearGradient }, palette: { gradients } }) =>
-            `${linearGradient(
-              rgba(gradients.info.main, 0.6),
-              rgba(gradients.info.state, 0.6)
-            )}, url(${backgroundImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "50%",
-          overflow: "hidden",
-        }}
       />
       <Card
         sx={{
@@ -95,22 +81,16 @@ function Header({ children }) {
       >
         <Grid container spacing={3} alignItems="center">
           <Grid item>
-            <MDAvatar src={defaultProfileImg} alt="profile-image" size="xl" shadow="sm" />
-          </Grid>
-          <Grid item>
-            <MDBox height="100%" mt={0.5} lineHeight={1}>
+            <MDBox height="100%" mt={1} ml={0.8} lineHeight={1}>
               <MDTypography variant="h5" fontWeight="medium">
-                Joseph Onyango
-              </MDTypography>
-              <MDTypography variant="button" color="text" fontWeight="regular">
-                First Admin
+                Account Information
               </MDTypography>
             </MDBox>
           </Grid>
-          <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto" }}>
+          <Grid item xs={12} md={6} mt={1} lg={4} sx={{ ml: "auto" }}>
             <AppBar position="static">
               <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
-                <Tooltip title="Edit Profile">
+                <Tooltip title="Edit Info">
                   <Tab
                     label="Edit"
                     icon={
@@ -120,7 +100,7 @@ function Header({ children }) {
                     }
                   />
                 </Tooltip>
-                <Tooltip title="Share Profile">
+                <Tooltip title="Share Info">
                   <Tab
                     label="Share"
                     icon={

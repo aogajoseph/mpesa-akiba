@@ -73,7 +73,7 @@ export default function data() {
     columns: [
       { Header: "saving goal", accessor: "companies", width: "45%", align: "left" },
       { Header: "target", accessor: "budget", align: "center" },
-      { Header: "remaining", accessor: "balance", width: "10%", align: "center" },
+      { Header: "balance", accessor: "balance", width: "10%", align: "center" },
       { Header: "completion", accessor: "completion", align: "center" },
       // { Header: "participants", accessor: "members", width: "10%", align: "center" },
     ],
